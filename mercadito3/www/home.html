@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - E-commerce de Comida</title>
+    <link rel="stylesheet" href="css/home.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script>
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+        const app = firebase.initializeApp(firebaseConfig);
+        const firestore = firebase.firestore(app);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado -->
+        <header class="header">
+            <h1>Mercadito</h1>
+        </header>
+
+        <!-- Barra de Búsqueda -->
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Buscar productos...">
+            <button id="search-btn">Buscar</button>
+        </div>
+
+        <!-- Botones de Navegación -->
+        <div class="nav-buttons">
+            <button id="notifications-btn" class="nav-btn">Notificaciones</button>
+            <button id="profile-btn" class="nav-btn">Perfil</button>
+            <button id="new-post-btn" class="nav-btn">Nueva Publicación</button>
+        </div>
+
+        <!-- Carrusel -->
+        <div class="carousel">
+            <div class="carousel-images" id="carousel-images">
+                <img src="https://www.laespanolaaceites.com/wp-content/uploads/2019/06/pizza-con-chorizo-jamon-y-queso-1080x671.jpg" alt="Pizza">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxUA14KW2T2VzS01PWpIM3F17X2W8-3mts9A&s" alt="Burger">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStaQBiDOvO7Qoy70K0gBTE2PC2LY25oo5DoQ&s" alt="Sushi">
+            </div>
+            <!-- Controles del Carrusel -->
+            <button class="carousel-control prev" id="prev-btn">&lt;</button>
+            <button class="carousel-control next" id="next-btn">&gt;</button>
+        </div>
+
+        <!-- Productos Recomendados -->
+        <div class="recommended-products">
+            <h2>Productos Recomendados</h2>
+            <div class="products-list" id="recommended-products-list">
+                <!-- Aquí se cargarán los productos recomendados desde Firestore -->
+            </div>
+        </div>
+
+        <!-- Nuevas Publicaciones -->
+        <div class="new-publications">
+            <h2>Nuevas Publicaciones</h2>
+            <div class="products-list" id="new-products-list">
+                <!-- Aquí se cargarán los nuevos productos desde Firestore -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/home.js"></script>
+</body>
+</html>

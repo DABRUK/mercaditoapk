@@ -1,0 +1,162 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+/* Establecer márgenes, rellenos y borde de caja a todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo y estilo general de la página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:#fff; /* Gradiente suave de colores azules */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Contenedor principal */
+.container {
+    text-align: center;
+    background-color: rgba(0, 21, 83, 0.86); /* Fondo oscuro semitransparente */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* Estilo del nombre de la aplicación */
+.app-name h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+/* Contenedor de los botones */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estilos generales de los botones */
+.btn {
+    padding: 16px 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilo del botón de Iniciar Sesión */
+.login-btn {
+    background-color: #28a745; /* Verde brillante */
+    color: white;
+    border: 2px solid #28a745;
+}
+
+.login-btn:hover {
+    background-color: #218838;
+    border-color: #218838;
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Estilo del botón de Registrar */
+.register-btn {
+    background-color: #007bff; /* Azul profesional */
+    color: white;
+    border: 2px solid #007bff;
+}
+
+.register-btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Efecto de enfoque para los botones */
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.8); /* Resaltado de borde al enfocarse */
+}
+
+
+/* Estilo general de los inputs en los formularios */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 16px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 2px solid #ddd; /* Borde gris claro */
+    background-color: #fff;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de enfoque en los inputs */
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff; /* Borde azul al enfocarse */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Sombra azul sutil */
+    outline: none; /* Elimina el contorno predeterminado */
+}
+
+/* Estilos para los contenedores de los inputs */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 0 auto;
+}
+
+/* Estilo del contenedor de cada input */
+.input-container {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Estilo del texto dentro de los inputs */
+input::placeholder {
+    color: #aaa; /* Color gris claro para los placeholders */
+    font-style: italic;
+}
+
+
+
+
+

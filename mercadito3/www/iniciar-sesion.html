@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Mi Aplicación</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth(app);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="app-name">
+            <h1>Iniciar Sesión</h1>
+        </div>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Correo Electrónico" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit" class="btn login-btn">Iniciar Sesión</button>
+            <p>¿No tienes cuenta? <a href="registro.html">Registrarse</a></p>
+        </form>
+    </div>
+    
+    <script>
+        const form = document.getElementById('login-form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            try {
+                await auth.signInWithEmailAndPassword(email, password);
+                alert('Bienvenido');
+                window.location.href = 'dashboard.html'; // Redirige a la página principal
+            } catch (error) {
+                alert(error.message);
+            }
+        });
+    </script>
+</body>
+</html>
